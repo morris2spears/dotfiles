@@ -6,7 +6,7 @@ set -euo pipefail
 # Usage: curl the repo, then: chmod +x bootstrap.sh && ./bootstrap.sh
 
 GITHUB_USER="morris2spears"
-NVIM_GITHUB_USER="Rismor"
+NVIM_GITHUB_USER="morris2spears"
 
 echo "=== Morris's Dotfiles Bootstrap ==="
 echo ""
