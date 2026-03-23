@@ -136,9 +136,11 @@ echo "[*] Setting up live wallpaper..."
 mkdir -p "$HOME/Wallpapers"
 WALLPAPER="$HOME/Wallpapers/black-hole-in-nebula-2.mp4"
 if [ ! -f "$WALLPAPER" ]; then
-    echo "  [!] Live wallpaper not found at $WALLPAPER"
-    echo "      The wallpaper video is too large for git."
-    echo "      Copy it manually: scp main:~/Wallpapers/black-hole-in-nebula-2.mp4 ~/Wallpapers/"
+    echo "  [*] Downloading black hole nebula wallpaper (4K, ~22MB)..."
+    curl -L -o "$WALLPAPER" "https://motionbgs.com/dl/4k/3261/"
+    echo "  [done] Wallpaper saved to $WALLPAPER"
+else
+    echo "  [skip] Wallpaper already exists"
 fi
 
 # ─── 6. Make scripts executable ───
@@ -163,6 +165,5 @@ echo "=== Done! ==="
 echo "Log out and back in (or restart i3 with Alt+Shift+r) to apply."
 echo ""
 echo "Manual steps remaining:"
-echo "  - Copy wallpaper: scp main:~/Wallpapers/black-hole-in-nebula-2.mp4 ~/Wallpapers/"
 echo "  - Log in to GitHub: gh auth login"
 echo "  - Set up Tailscale: sudo tailscale up"

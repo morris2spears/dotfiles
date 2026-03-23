@@ -29,8 +29,4 @@ chmod +x bootstrap.sh
 
 ## Live Wallpaper
 
-The black hole wallpaper video is too large for git. Copy it manually:
-
-```bash
-scp main:~/Wallpapers/black-hole-in-nebula-2.mp4 ~/Wallpapers/
-```
+The bootstrap script automatically downloads the [Black Hole in Nebula](https://motionbgs.com/black-hole-in-nebula) 4K live wallpaper from motionbgs.com. It plays via `xwinwrap` + `mpv`.
