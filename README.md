@@ -22,7 +22,7 @@ chmod +x bootstrap.sh
    - [alacritty-config](https://github.com/morris2spears/alacritty-config) → `~/.config/alacritty/`
    - [rofi-config](https://github.com/morris2spears/rofi-config) → `~/.config/rofi/`
    - [fish-config](https://github.com/morris2spears/fish-config) → `~/.config/fish/`
-   - [scripts](https://github.com/morris2spears/scripts) → `~/scripts/`
+   - [tmux-config](https://github.com/morris2spears/tmux-config) → `~/.config/tmux/`
    - [neovim-dots](https://github.com/morris2spears/neovim-dots) → `~/.config/nvim/`
 4. Sets fish as default shell
 5. Enables system services (tailscale, sshd, NetworkManager)

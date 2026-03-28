@@ -118,7 +118,7 @@ clone_config "picom-config"     "$HOME/.config/picom"
 clone_config "alacritty-config" "$HOME/.config/alacritty"
 clone_config "rofi-config"      "$HOME/.config/rofi"
 clone_config "fish-config"      "$HOME/.config/fish"
-clone_config "scripts"          "$HOME/scripts"
+clone_config "tmux-config"      "$HOME/.config/tmux"
 
 # Neovim config (separate GitHub account)
 if [ -d "$HOME/.config/nvim/.git" ]; then
@@ -145,8 +145,13 @@ fi
 
 # ─── 6. Make scripts executable ───
 echo "[*] Setting script permissions..."
-chmod +x "$HOME/scripts/"*.sh 2>/dev/null || true
 chmod +x "$HOME/.config/polybar/"*.sh 2>/dev/null || true
+
+# Move old ~/.tmux.conf out of the way so tmux uses ~/.config/tmux/tmux.conf
+if [ -f "$HOME/.tmux.conf" ] && [ -d "$HOME/.config/tmux/.git" ]; then
+    echo "  [backup] Moving ~/.tmux.conf to ~/.tmux.conf.bak (using ~/.config/tmux/ now)"
+    mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak"
+fi
 
 # ─── 7. Set fish as default shell ───
 if [ "$SHELL" != "$(which fish)" ]; then
